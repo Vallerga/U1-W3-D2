@@ -57,7 +57,6 @@ console.log(resultEx2);
 */
 
 console.log("\n EXECISE 3°\n");
-
 const onlyEvenNum = function (arrayToFilter) {
   let evenArray = arrayToFilter.filter(evenFunction => evenFunction % 2 === 0);
   return evenArray;
@@ -68,19 +67,58 @@ console.log(resultEx3);
 /* ESERCIZIO 4
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+/*scrivi una funzione
+riceve numeri da array
+li somma*/
+
+console.log("\n EXECISE 4-5°\n");
+const sumArrayFunction = function (arr) {
+  let arraySum = arr.reduce((acc, val) => acc + val, 0);
+  return arraySum;
+}
+const arrayToSum = [2, 4, 5, 3, 7];
+console.log(sumArrayFunction(arrayToSum));
+
 
 /* ESERCIZIO 5
   Scrivi una funzione per sommare i numeri contenuti in un array (usare REDUCE)
 */
 
+// fatto sopra
+
 /* ESERCIZIO 6
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+
+console.log("\n EXECISE 6°\n");
+const arrayModificator = function (arrayPar1, modificator) {
+  let arrAfterModification = arrayPar1.map(arr => arr + modificator);
+  return arrAfterModification;
+}
+let n = 5;
+let arrayToModified = [4, 6, 8, 3, 2, 1, 9];
+let resultEx6 = arrayModificator(arrayToModified, n);
+console.log(resultEx6);
 
 /* ESERCIZIO 8
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+
+console.log("\n EXECISE 8°\n");
+const countEveryStringNum = function (arrCounted) {       // 2) function initialization
+  let toCountString = [];
+  let strSplit ='';
+  const stringCounted = function () {                     // 5) initialization innested function
+    toCountString = strSplit.length;
+  };
+  let arraySplitted = arrCounted.split('');               // 3) array split doesn't work
+  arraySplitted.forEach(stringCounted, arraySplitted);    // 4) forEach cicle count string length
+  return toCountString;                                   // 6) return value
+}
+let counterMyString = ["viva", "informatica", "sempre"]; 
+let resultEx8 = countEveryStringNum(counterMyString);     // 1) call function
+console.log(resultEx8);                                   // 7) print function
 
 /* ESERCIZIO 9
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
